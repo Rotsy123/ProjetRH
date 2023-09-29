@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2KgaHaOjh+4xqyuKf1CkRWhcr7btqHkjGyElmxbKk1n8zxRm04c5vYAU8D0aMSCn2ZHubgceLh1iiK1iPhVdyA==",
+  "dgSpecHash": "mT4owzw/jyeV4M3oTYXyP9hVXJT4rRx/OoR7K5gx0n6fc+1dC9nxQEJalJwLQckmlJa93gj4Rl849bx681Lu/A==",
   "success": true,
   "projectFilePath": "A:\\ETUDE\\Mr_TOVO\\S5\\ProjetRH\\ProjetRH.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,7 @@
     "C:\\Users\\ANDRIANOTAHINA\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\ANDRIANOTAHINA\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\ANDRIANOTAHINA\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
-    "C:\\Users\\ANDRIANOTAHINA\\.nuget\\packages\\system.data.sqlclient\\4.8.2\\system.data.sqlclient.4.8.2.nupkg.sha512",
+    "C:\\Users\\ANDRIANOTAHINA\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
     "C:\\Users\\ANDRIANOTAHINA\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\ANDRIANOTAHINA\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],

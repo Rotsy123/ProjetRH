@@ -1,11 +1,11 @@
 create database rh
 create table departement(
-    idDepartement int primary key,
+    idDepartement int IDENTITY(1,1) primary key,
     nomDepartement varchar(30)
 );
 
 create table demande(
-    idDemande int primary key,
+    idDemande int IDENTITY(1,1) primary key,
     dateDemande date,
     heureTravaux datetime,
     hommeJour double precision,
@@ -14,7 +14,7 @@ create table demande(
 );
 
 create table poste(
-    idPoste int primary key,
+    idPoste int IDENTITY(1,1) primary key,
     nomPoste varchar(30),
     effectif int,
     idDemande int,
@@ -22,7 +22,7 @@ create table poste(
     foreign key (idDemande) references demande(idDemande)
 );
 create table employes(
-    idEmp int primary key,
+    idEmp int IDENTITY(1,1)int primary key,
     idDept int,
     idPoste int,
     salaire double precision,
