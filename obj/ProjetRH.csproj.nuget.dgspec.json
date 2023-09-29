@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ITU\\s5\\Mr Tovo\\ProjetRH\\ProjetRH.csproj": {}
+    "A:\\ETUDE\\Mr_TOVO\\S5\\ProjetRH\\ProjetRH.csproj": {}
   },
   "projects": {
-    "D:\\ITU\\s5\\Mr Tovo\\ProjetRH\\ProjetRH.csproj": {
+    "A:\\ETUDE\\Mr_TOVO\\S5\\ProjetRH\\ProjetRH.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ITU\\s5\\Mr Tovo\\ProjetRH\\ProjetRH.csproj",
+        "projectUniqueName": "A:\\ETUDE\\Mr_TOVO\\S5\\ProjetRH\\ProjetRH.csproj",
         "projectName": "ProjetRH",
-        "projectPath": "D:\\ITU\\s5\\Mr Tovo\\ProjetRH\\ProjetRH.csproj",
-        "packagesPath": "C:\\Users\\Tsiky Aro\\.nuget\\packages\\",
-        "outputPath": "D:\\ITU\\s5\\Mr Tovo\\ProjetRH\\obj\\",
+        "projectPath": "A:\\ETUDE\\Mr_TOVO\\S5\\ProjetRH\\ProjetRH.csproj",
+        "packagesPath": "C:\\Users\\ANDRIANOTAHINA\\.nuget\\packages\\",
+        "outputPath": "A:\\ETUDE\\Mr_TOVO\\S5\\ProjetRH\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tsiky Aro\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ANDRIANOTAHINA\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -40,7 +40,7 @@
           "dependencies": {
             "System.Data.SqlClient": {
               "target": "Package",
-              "version": "[4.8.2, )"
+              "version": "[4.8.5, )"
             }
           },
           "imports": [
@@ -62,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

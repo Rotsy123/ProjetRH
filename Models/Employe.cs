@@ -31,6 +31,7 @@ public class Employes{
         IdDept = idDept;
         Salaire = salaire;
     }
+    public Employes(){}
 
     public double Salaire { get => salaire; set => salaire = value; }
     public int IdDept { get => idDept; set => idDept = value; }
