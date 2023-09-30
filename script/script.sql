@@ -1,4 +1,6 @@
 create database rh
+
+
 create table departement(
     idDepartement int IDENTITY(1,1) primary key,
     nomDepartement varchar(30)
@@ -29,7 +31,22 @@ create table employes(
     foreign key (idDepartement) references departement(idDepartement),
     foreign key (idPPoste) references poste(idPoste),
 );
+-- Donnes --
+INSERT INTO departement (idDepartement, nomDepartement) VALUES
+(1, 'Ressources Humaines'),
+(2, 'Finance'),
+(3, 'Informatique');
 
+-- Insertion de données de test dans la table poste
+INSERT INTO poste (idPoste, nomPoste) VALUES
+(1, 'Manager'),
+(2, 'Développeur'),
+(3, 'Comptable');
+
+INSERT INTO employes (idDept, idPoste, salaire) VALUES
+(1, 1, 60000.00),
+(2, 3, 45000.00),
+(3, 2, 55000.00);
 
 -- create table critere(
 --     idCritere int primary key,

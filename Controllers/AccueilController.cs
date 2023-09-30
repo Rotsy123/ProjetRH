@@ -1,24 +1,21 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ProjetRh.Models;
 using Rh.Models;
 
-namespace ProjetRH.Controllers
+namespace ProjetRH.Controllers;
+public class AccueilController : Controller
 {
-    public class AccueilController : Controller
+    public IActionResult InsertionDemand()
     {
-        public ActionResult InsertionDemand()
-        {
-            return View("/Views/listEmploye");
-        }
-
-        [HttpPost]
-        public ActionResult ListeEmploye()
-        {
-            string idDept = Request.Query["idDept"];
-            Connexion c = new Connexion();
-            Employes emp = new Employes(); 
-            Employes[] listemp = emp.GetDonnee(c);
-            return View("/Views/listEmploye",listemp);
-        }
+        return View("/Views/listEmploye");
+    }
+    public IActionResult EmployeListe(){
+        // string idDept = Request.Query["idDept"];
+        Connexion c = new Connexion();
+        Employes emp = new Employes(); 
+        Employes[] listemp = emp.GetDonnee(c);
+        ViewBag.ListeEmp = listemp;
+        return View();
     }
 }
