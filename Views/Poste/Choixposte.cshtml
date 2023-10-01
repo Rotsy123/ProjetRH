@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #container {
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        form {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        select, input[type="number"] {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #finish-button {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        #finish-button:hover {
+            background-color: #0077A3;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Ajouter Nombre Effectif</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Poste</th>
+                    <th>Effectif</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <form id="item-form">
+            <select id="item-name" required>
+                <option value="">Choisir un poste</option>
+                <option value="Directeur">Directeur</option>
+                <option value="Secrétaire">Secrétaire</option>
+            </select>
+            <input type="number" id="item-quantity" placeholder="Quantité" required>
+            <input type="submit" value="Ajouter">
+        </form>
+        <button id="finish-button" onclick="terminer()">Terminer</button>
+    </div>
+
+    <script>
+        const tableBody = document.querySelector('tbody');
+        const itemForm = document.getElementById('item-form');
+        const itemNameInput = document.getElementById('item-name');
+        const itemQuantityInput = document.getElementById('item-quantity');
+
+        itemForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const itemName = itemNameInput.value;
+            const itemQuantity = itemQuantityInput.value;
+
+            if (itemName && itemQuantity) {
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td>${itemName}</td>
+                    <td>${itemQuantity}</td>
+                `;
+                tableBody.appendChild(newRow);
+
+                itemNameInput.value = '';
+                itemQuantityInput.value = '';
+            }
+        });
+
+        function terminer() {
+            alert('Processus terminé !');
+        }
+    </script>
+</body>
+</html>
