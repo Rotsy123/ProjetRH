@@ -43,4 +43,5 @@ class Poste{
     public int Effectif { get => effectif ;set => effectif = value;}
     public int IdDemande { get => idDemande ;set => idDemande = value;}
     public DateTime DateFinPostule { get => dateFinPostule ;set => dateFinPostule = value;}
+
 }
