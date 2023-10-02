@@ -46,6 +46,7 @@ td:nth-child(5) {
     </style> 
     <table>
         <tr>
+            <th>id</th>
             <th>Nom</th>
             <th>Prénom</th>
             <th>Date de Naissance</th>
@@ -54,12 +55,12 @@ td:nth-child(5) {
         </tr>
         @for (int i = 0; i < ViewBag.ListeEmp.Length; i++){
             <tr>
-                <td>Smith</td>
-                <td>John</td>
-                <td>10/05/1980</td>
-                <td>50000 €</td>
-                <td>Développeur</td>
+                <td>@ViewBag.ListeEmp[i].IdEmpt</td>
+                <td>@ViewBag.ListeEmp[i].Nom</td>
+                <td>@ViewBag.ListeEmp[i].Prenom</td>
+                <td>@ViewBag.ListeEmp[i].Dtn</td>
+                <td>@ViewBag.ListeEmp[i].Salaire</td>
+                <td>@ViewBag.ListeEmp[i].IdPoste</td>
             </tr>
         }
-        <!-- Ajoutez plus de lignes ici pour plus d'employés -->
     </table>

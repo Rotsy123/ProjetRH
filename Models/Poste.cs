@@ -28,6 +28,8 @@ class Poste{
         return postes.ToArray();
     }
 
+    public Poste() {}
+
     public Poste(int idPoste, string nomPoste, int effectif,int idDemande, DateTime dateFinPostule){
         IdPoste = idPoste;
         NomPoste = nomPoste;
@@ -35,8 +37,6 @@ class Poste{
         IdDemande = idDemande;
         DateFinPostule = dateFinPostule;
     }
-
-    public Poste(){}
 
     public int IdPoste { get => idPoste ;set => idPoste = value;}
     public string NomPoste { get => nomPoste ;set => nomPoste = value;}

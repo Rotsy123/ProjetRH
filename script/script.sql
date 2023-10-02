@@ -24,7 +24,7 @@ create table poste(
     foreign key (idDemande) references demande(idDemande)
 );
 create table employes(
-    idEmp int IDENTITY(1,1)int primary key,
+    idEmp int IDENTITY(1,1)primary key,
     nom varchar(30),
     prenom varchar(30),
     dtn date,
@@ -46,8 +46,8 @@ INSERT INTO poste (idPoste, nomPoste) VALUES
 (2, 'Développeur'),
 (3, 'Comptable');
 
-INSERT INTO employes (idDept, idPoste, salaire) VALUES
-(1, 1, 60000.00),
+INSERT INTO employes (nom,prenom,dtn,idDept, idPoste, salaire) VALUES
+('Jean', 'Paul', '1995-12-03', 1, 1, 60000.00),
 (2, 3, 45000.00),
 (3, 2, 55000.00);
 
