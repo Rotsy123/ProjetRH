@@ -25,11 +25,14 @@ create table poste(
 );
 create table employes(
     idEmp int IDENTITY(1,1)int primary key,
+    nom varchar(30),
+    prenom varchar(30),
+    dtn date,
     idDept int,
     idPoste int,
     salaire double precision,
-    foreign key (idDepartement) references departement(idDepartement),
-    foreign key (idPPoste) references poste(idPoste),
+    foreign key (idDept) references departement(idDepartement),
+    foreign key (idPoste) references poste(idPoste),
 );
 -- Donnes --
 INSERT INTO departement (idDepartement, nomDepartement) VALUES
