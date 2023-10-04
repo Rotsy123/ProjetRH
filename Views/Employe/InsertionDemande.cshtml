@@ -1,59 +1,91 @@
 @{
-    ViewData["Title"] = "Inserer votre demande";
+ ViewData["Title"] = "Inserer votre demande";
 }
-<h1>@ViewData["Title"]</h1>
         
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
-        <div class="container">
-                <form action="@Url.Action("Choixposte", "Poste")" method="post">
-                <div class="top">
-                    <input name="heureT" type="number" placeholder="Nombre d'heure de Travail Util" min="0" required>
-                    <input name="jourH" type="number" placeholder="Jour Homme par Semaine" required>
-                    <div class="bottom">
-                        <input type="submit" class="view-button" value="Valider">
-                    </div>
+
+            <section class="contenue">
+                <div>
+                    <header>
+                        <h2>@ViewData["Title"]</h2>
+                    </header>
+                    <form action="@Url.Action("Choixposte", "Poste")" method="post">
+                        <input type="number" name="heureT" placeholder="Nombre d'heure de travail util" min="0" required="required"/>
+                        <input type="number" name="jourH" placeholder="Jour homme par semaine" min="0" required="required"/>
+                        <button type="submit">Valider</button>
+                    </form>
                 </div>
-                </form>
+            </section>
         </div>
 
 <style>
-.container {
-    text-align: center;
-    padding: 30px;  
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background-color: #fff; /* Ajout d'un fond blanc pour un meilleur contraste */
-    justify-content: center;
-}
+    section.contenue{
+        position: fixed;
+        top:0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    header h2{
+        margin-bottom: 50px;
+    }
+    section.contenue > div{
+        width: 600px;
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+        background: #fff;
+        border-radius: 5px;
+        margin-top: 75px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    section.contenue form{
+        display: flex;
+        flex-direction: column;
+    }
+    form input[type="number"], 
+    form button[type="submit"] {
+        width: 100%;
+        margin-bottom: 32px;
+        padding: 16px;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: 0;
+    }
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
+    form input[type="number"]:focus,
+    form input[type="number"]:hover,{
+        background-color: #ccc;
+    }
 
-input{
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 400px;
-    box-sizing: border-box;
-}
-.top{
-    display: grid;
-    justify-content: center;
-}
+    form button[type="submit"] {
+        font-weight: bold;
+        color: #eee;
+        text-transform: uppercase;
 
-.view-button{
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    @* margin: 0 10px; *@
-    margin-top: 20px;
-    cursor: pointer;
-}
+        background-color: #007bff;
+    }
+    form button[type="submit"]:focus,
+    form button[type="submit"]:hover {
+        background-color: #0262c8;
+    }
+    html{
+        box-sizing: border-box;
+    }
+
+    *,*:before,*:after{
+        box-sizing: inherit;
+    }
+
+    .wrapper{
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    body{
+       background-color:#f2f2f2 ; 
+    }
+</style>
