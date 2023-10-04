@@ -51,6 +51,16 @@ INSERT INTO employes (nom,prenom,dtn,idDept, idPoste, salaire) VALUES
 (2, 3, 45000.00),
 (3, 2, 55000.00);
 
+
+
+create table posteeffectif(
+    idPosteEffectif int IDENTITY(1,1) primary key,
+    idDemande int,
+    effectif int,
+    datefinpostule DATETIME,
+    foreign key (idDemande) references demande(idDemande)
+ );
+ 
 -- create table critere(
 --     idCritere int primary key,
 --     nomCritere varchar(30)
