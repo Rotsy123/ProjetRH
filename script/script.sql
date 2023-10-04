@@ -61,6 +61,33 @@ create table posteeffectif(
     foreign key (idDemande) references demande(idDemande)
  );
  
+ create table question(
+    idQuestion int IDENTITY(1,1) primary key,
+    question varchar(100) not null
+ );
+
+create table reponse(
+    idReponse int IDENTITY(1,1) primary key,
+    reponse varchar(100) not null
+);
+
+create table questionreponse(
+    idQuestion int,
+    idReponse int,
+    valeur int,
+    foreign key (idQuestion) references question(idQuestion),
+    foreign key (idReponse) references reponse(idReponse)
+);
+
+create table quiz(
+    idQuiz int IDENTITY(1,1) primary key,
+    idPoste int,
+    idQuestion int,
+    foreign key (idPoste) references poste(idPoste),
+    foreign key (idQuestion) references question(idQuestion)
+);
+
+
 -- create table critere(
 --     idCritere int primary key,
 --     nomCritere varchar(30)
