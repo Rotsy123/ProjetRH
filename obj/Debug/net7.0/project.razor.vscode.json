@@ -24027,11 +24027,6 @@
   "RootNamespace": "ProjetRH",
   "Documents": [
     {
-      "FilePath": "d:\\ITU\\s5\\Mr Tovo\\ProjetRH\\Views\\Accueil\\EmployeListe.cshtml",
-      "TargetPath": "Views\\Accueil\\EmployeListe.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "d:\\ITU\\s5\\Mr Tovo\\ProjetRH\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -24039,16 +24034,6 @@
     {
       "FilePath": "d:\\ITU\\s5\\Mr Tovo\\ProjetRH\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\ITU\\s5\\Mr Tovo\\ProjetRH\\Views\\Home\\Teste.cshtml",
-      "TargetPath": "Views\\Home\\Teste.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\ITU\\s5\\Mr Tovo\\ProjetRH\\Views\\Poste\\Choixposte.cshtml",
-      "TargetPath": "Views\\Poste\\Choixposte.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -24077,6 +24062,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\ITU\\s5\\Mr Tovo\\ProjetRH\\Views\\Accueil\\EmployeListe.cshtml",
+      "TargetPath": "Views\\Accueil\\EmployeListe.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\ITU\\s5\\Mr Tovo\\ProjetRH\\Views\\Employe\\EmployeListe.cshtml",
       "TargetPath": "Views\\Employe\\EmployeListe.cshtml",
       "FileKind": "mvc"
@@ -24084,6 +24074,16 @@
     {
       "FilePath": "d:\\ITU\\s5\\Mr Tovo\\ProjetRH\\Views\\Employe\\InsertionDemande.cshtml",
       "TargetPath": "Views\\Employe\\InsertionDemande.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\ITU\\s5\\Mr Tovo\\ProjetRH\\Views\\Home\\Teste.cshtml",
+      "TargetPath": "Views\\Home\\Teste.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\ITU\\s5\\Mr Tovo\\ProjetRH\\Views\\Poste\\Choixposte.cshtml",
+      "TargetPath": "Views\\Poste\\Choixposte.cshtml",
       "FileKind": "mvc"
     }
   ]
