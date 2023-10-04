@@ -1,0 +1,60 @@
+@{
+    ViewData["Title"] = "Inserer votre demande";
+}
+<h1>@ViewData["Title"]</h1>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <div class="container">
+            <div class="top">
+                <form action="@Url.Action("Choixposte", "Poste")" method="post">
+                    <label for="">Nombre d'heure de Travail Util</label>
+                    <input name="heureT" type="text" placeholder="Input 1" required>
+                    <label for="">Jour Homme par Semaine</label>
+                    <input name="jourH" type="text" placeholder="Input 2" required>
+                    <div class="bottom">
+                        <input type="submit" class="view-button" value="Valider">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+<style>
+.container {
+    text-align: center;
+    padding: 30px;  
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff; /* Ajout d'un fond blanc pour un meilleur contraste */
+    justify-content: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+input{
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 400px;
+    box-sizing: border-box;
+}
+.top{
+    display: grid;
+    justify-content: center;
+}
+
+.view-button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+}
