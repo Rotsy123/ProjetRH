@@ -9,65 +9,65 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjetRH
 build_property.RootNamespace = ProjetRH
-build_property.ProjectDir = d:\ITU\s5\Mr Tovo\ProjetRH\
+build_property.ProjectDir = a:\ETUDE\Mr_TOVO\S5\ProjetRH\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = d:\ITU\s5\Mr Tovo\ProjetRH
+build_property.MSBuildProjectDirectory = a:\ETUDE\Mr_TOVO\S5\ProjetRH
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/ITU/s5/Mr Tovo/ProjetRH/Views/Accueil/EmployeListe.cshtml]
+[a:/ETUDE/Mr_TOVO/S5/ProjetRH/Views/Accueil/EmployeListe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjdWVpbFxFbXBsb3llTGlzdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ITU/s5/Mr Tovo/ProjetRH/Views/Employe/EmployeListe.cshtml]
+[a:/ETUDE/Mr_TOVO/S5/ProjetRH/Views/Employe/EmployeListe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZVxFbXBsb3llTGlzdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ITU/s5/Mr Tovo/ProjetRH/Views/Employe/InsertionDemande.cshtml]
+[a:/ETUDE/Mr_TOVO/S5/ProjetRH/Views/Employe/InsertionDemande.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZVxJbnNlcnRpb25EZW1hbmRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ITU/s5/Mr Tovo/ProjetRH/Views/Home/Index.cshtml]
+[a:/ETUDE/Mr_TOVO/S5/ProjetRH/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ITU/s5/Mr Tovo/ProjetRH/Views/Home/Privacy.cshtml]
+[a:/ETUDE/Mr_TOVO/S5/ProjetRH/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ITU/s5/Mr Tovo/ProjetRH/Views/Home/Teste.cshtml]
+[a:/ETUDE/Mr_TOVO/S5/ProjetRH/Views/Home/Teste.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXN0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ITU/s5/Mr Tovo/ProjetRH/Views/Poste/Choixposte.cshtml]
+[a:/ETUDE/Mr_TOVO/S5/ProjetRH/Views/Poste/Choixposte.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdGVcQ2hvaXhwb3N0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ITU/s5/Mr Tovo/ProjetRH/Views/Poste/EditCV.cshtml]
+[a:/ETUDE/Mr_TOVO/S5/ProjetRH/Views/Poste/EditCV.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdGVcRWRpdENWLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ITU/s5/Mr Tovo/ProjetRH/Views/Poste/PosteListe.cshtml]
+[a:/ETUDE/Mr_TOVO/S5/ProjetRH/Views/Poste/PosteListe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdGVcUG9zdGVMaXN0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ITU/s5/Mr Tovo/ProjetRH/Views/Shared/Error.cshtml]
+[a:/ETUDE/Mr_TOVO/S5/ProjetRH/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ITU/s5/Mr Tovo/ProjetRH/Views/Shared/_ValidationScriptsPartial.cshtml]
+[a:/ETUDE/Mr_TOVO/S5/ProjetRH/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ITU/s5/Mr Tovo/ProjetRH/Views/_ViewImports.cshtml]
+[a:/ETUDE/Mr_TOVO/S5/ProjetRH/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ITU/s5/Mr Tovo/ProjetRH/Views/_ViewStart.cshtml]
+[a:/ETUDE/Mr_TOVO/S5/ProjetRH/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ITU/s5/Mr Tovo/ProjetRH/Views/Shared/_Layout.cshtml]
+[a:/ETUDE/Mr_TOVO/S5/ProjetRH/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-4kpdy4d00p
