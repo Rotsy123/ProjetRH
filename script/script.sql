@@ -88,10 +88,10 @@ create table quiz(
 );
 
 
-create table critere(
-    idCritere int primary key,
-    nomCritere varchar(30)
-);
+    -- create table critere(
+    --     idCritere int primary key,
+    --     nomCritere varchar(30)
+    -- );
 
 -- create table annonce(
 --     idAnnonce int,
