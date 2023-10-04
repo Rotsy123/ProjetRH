@@ -4,7 +4,7 @@ using ProjetRh.Models;
 namespace ProjetRH.Models;
 class PosteEffectif{
     public int idPosteEffectif;
-    public int idDenande;
+    public int idDemande;
     public int effectif;
     public DateTime datefinpostule;
 
@@ -21,16 +21,16 @@ class PosteEffectif{
         con.Close();
     }
 
-    public PosteEffectif(int idPosteEffectif, int idDenande, int effectif, DateTime datefinpostule){
+    public PosteEffectif(int idPosteEffectif, int idDemande, int effectif, DateTime datefinpostule){
         IdPosteEffectif = idPosteEffectif;
-        IdDenande = idDenande;
+        IdDemande = idDemande;
         Effectif = effectif;
         Datefinpostule = datefinpostule;
     }
     public PosteEffectif(){}
 
     public int IdPosteEffectif{get => idPosteEffectif ;set => idPosteEffectif = value;}
-    public int IdDenande{get => idDenande ;set => idDenande = value;}
+    public int IdDemande{get => idDemande ;set => idDemande = value;}
     public int Effectif{get => effectif ;set => effectif = value;}
     public DateTime Datefinpostule{get => datefinpostule ;set => datefinpostule = value;}
 }
