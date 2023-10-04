@@ -87,6 +87,22 @@ create table quiz(
     foreign key (idQuestion) references question(idQuestion)
 );
 
+create table cursus(
+    idCursus int IDENTITY(1,1) primary key,
+    nomCursus   varchar(25)
+);
+
+create table cursusniveau(
+    idCursusNiveau IDENTITY(1,1) primary key,
+    idCursus    int references cursus (idCursus),
+    niveau      double precision,
+    coefficient double precision
+);
+
+create table cv(
+
+);
+
 
     -- create table critere(
     --     idCritere int primary key,
