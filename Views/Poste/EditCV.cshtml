@@ -1,0 +1,147 @@
+@{
+    ViewData["Title"] = "Editer un CV";
+}
+<h1>@ViewData["Title"]</h1>    
+    <form action="traitement.php" method="post">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br>
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required><br>
+
+        <label for="adresse">Adresse :</label>
+        <input type="text" id="adresse" name="adresse"><br>
+
+        <h3>Cursus :</h3>
+        <div id="cursus-container">
+            <!-- Les champs "Critère" et "Coefficient" seront ajoutés ici -->
+        </div>
+        <button type="button" id="ajouter-cursus">Ajouter</button><br>
+
+        <h3>Experiences Professionnelles :</h3>
+
+        <div id="experiences-container">
+            <!-- Les champs "Critère" et "Coefficient" seront ajoutés ici -->
+        </div>
+        <button type="button" id="ajouter-experience">Ajouter</button><br>
+
+        <input type="submit" value="Soumettre" id="but">
+    </form>
+
+    <script>
+        // Fonction pour ajouter dynamiquement des champs "Critère" et "Coefficient"
+        document.getElementById("ajouter-cursus").addEventListener("click", function () {
+            var container = document.getElementById("cursus-container");
+            ajouterChamp(container, "cursus-critere[]", "cursus-coefficient[]");
+        });
+
+        document.getElementById("ajouter-experience").addEventListener("click", function () {
+            var container = document.getElementById("experiences-container");
+            ajouterChamp(container, "experience-critere[]", "experience-coefficient[]");
+        });
+
+        function ajouterChamp(container, nomCritere, nomCoefficient) {
+            // Créez un div pour chaque paire de champs
+            var champContainer = document.createElement("div");
+
+            // Créez un élément "input" pour le critère
+            var inputCritere = document.createElement("input");
+            inputCritere.type = "text";
+            inputCritere.placeholder = "Critère";
+            inputCritere.name = nomCritere;
+
+            // Créez un élément "input" pour le coefficient
+            var inputCoefficient = document.createElement("input");
+            inputCoefficient.type = "number";
+            inputCoefficient.placeholder = "Coefficient";
+            inputCoefficient.name = nomCoefficient;
+
+            // Ajoutez les éléments au conteneur
+            champContainer.appendChild(inputCritere);
+            champContainer.appendChild(inputCoefficient);
+
+            // Ajoutez le conteneur au conteneur principal
+            container.appendChild(champContainer);
+        }
+    </script>
+
+    <style>
+        
+ 
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+#cursus-container div {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#cursus-container input[type="text"] {
+    margin-right: 10px; /* Ajout de marge à droite pour séparer les champs */
+}
+
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+#but{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>

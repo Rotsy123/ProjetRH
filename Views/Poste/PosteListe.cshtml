@@ -1,0 +1,67 @@
+@{
+    ViewData["Title"] = "Liste des Postes";
+}
+<h1>@ViewData["Title"]</h1>
+<style>
+      /* Style pour le tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Style pour les en-têtes */
+thead th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Style pour les lignes impaires */
+tr:nth-child(odd) {
+    background-color: #f5f5f5;
+}
+
+/* Style pour les cellules "Salaire" */
+td:nth-child(4) {
+    font-weight: bold;
+}
+
+/* Style pour les cellules "Métier" */
+td:nth-child(5) {
+    color: #27ae60;
+    font-style: italic;
+}
+
+    </style> 
+    <table>
+        <tr>
+            <th>Poste</th>
+            <th>Effectif</th>
+            <th>Salaire</th>
+            <th>  </th>
+        </tr>
+        <tr>
+            <td>Développeur</td>
+            <td>2</td>
+            <td>50000 €</td>
+            <td><a href="EditCV" class="edit-link">Editer un CV</a></td>
+        </tr>
+        <tr>
+            <td>Designer</td>
+            <td>2</td>
+            <td>60000 €</td>
+            <td><a href="EditCV" class="edit-link">Editer un CV</a></td>
+        </tr>
+        <!-- Ajoutez plus de lignes ici pour plus d'employés -->
+    </table>

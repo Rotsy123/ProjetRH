@@ -31,6 +31,14 @@ namespace ProjetRH.Controllers
             ViewBag.nombre= nombre;
             return View(); 
         }
+         public IActionResult PosteListe()
+        {
+            return View(); 
+        }
+        public IActionResult EditCV()
+        {
+            return View(); 
+        }
 
         public IActionResult Index()
         {
