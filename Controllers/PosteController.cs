@@ -26,6 +26,7 @@ namespace ProjetRH.Controllers
             double hommeJour = Convert.ToDouble(Request.Form["jourH"].ToString());
             Connexion con = new Connexion();
             Demande dem = new Demande(date,heureT,hommeJour,idDemande);
+            t
             dem.Insert(con);
             int nombre = dem.EmployeARetruter(heureT,hommeJour);
             ViewBag.nombre= nombre;
