@@ -8,7 +8,7 @@ create table departement(
 
 create table demande(
     idDemande int IDENTITY(1,1) primary key,
-    dateDemande date,
+    dateDemande datetime,
     heureTravaux datetime,
     hommeJour double precision,
     idDepartement int,
