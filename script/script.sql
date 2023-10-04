@@ -63,12 +63,12 @@ create table posteeffectif(
  
  create table question(
     idQuestion int IDENTITY(1,1) primary key,
-    question varchar(100) not null
+    question text
  );
 
 create table reponse(
     idReponse int IDENTITY(1,1) primary key,
-    reponse varchar(100) not null
+    reponse text
 );
 
 create table questionreponse(
