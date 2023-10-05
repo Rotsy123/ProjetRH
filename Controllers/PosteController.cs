@@ -19,6 +19,32 @@ namespace ProjetRH.Controllers
         {
             _logger = logger;
         }
+        // public IActionResult  InsertionPosteEffectif(){
+        //     Connexion con = new Connexion();
+        //     int idDemande = 3;
+        //     int idposte = int.Parse(Request.Form["idPoste"].ToString());
+        //     int effectif = int.Parse(Request.Form["effectif"].ToString());
+        //     DateTime finpostule = Convert.ToDateTime(Request.Form["datefinpostule"].ToString());
+        //     PosteEffectif poste = new PosteEffectif(idDemande,effectif,idposte, finpostule);
+        //     poste.insertionPosteEffectif(con); 
+        //     return RedirectToAction("ChoixPoste");
+        // }
+
+     public IActionResult InsertionPosteEffectif()
+{
+    Connexion con = new Connexion();
+    int idDemande = 3;
+    int idposte = int.Parse(Request.Form["idPoste"].ToString());
+    int effectif = int.Parse(Request.Form["effectif"].ToString());
+    DateTime finpostule = Convert.ToDateTime(Request.Form["datefinpostule"].ToString());
+    PosteEffectif poste = new PosteEffectif(idDemande, effectif, idposte, finpostule);
+    poste.insertionPosteEffectif(con); 
+
+    // Retourner une réponse JSON indiquant le succès
+    return Json(new { success = true });
+}
+
+
         public IActionResult Choixposte(){
             int idDemande = 3;
             DateTime date = DateTime.Today;
@@ -28,6 +54,8 @@ namespace ProjetRH.Controllers
             Demande dem = new Demande(date,heureT,hommeJour,idDemande);
             dem.Insert(con);
             int nombre = dem.EmployeARetruter(heureT,hommeJour);
+            Poste[] poste = new Poste().selectPosteDepartement(con, 3);
+            ViewBag.postes = poste;
             ViewBag.nombre= nombre;
             return View(); 
         }

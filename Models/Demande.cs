@@ -33,7 +33,7 @@ public class Demande
         cmd.Parameters.AddWithValue("@idDepartement",IdDepartement);
         Console.WriteLine(sql);
         cmd.ExecuteNonQuery();
-        con.Close();
+        // con.Close();
     }
     public Demande(DateTime dateD,double heureTr,double hommeJour,int idDepartement){
         DateDemande = dateD;

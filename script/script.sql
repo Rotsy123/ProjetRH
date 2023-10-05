@@ -58,6 +58,8 @@ create table posteeffectif(
     idDemande int,
     effectif int,
     datefinpostule DATETIME,
+    idposte int,
+    foreign key (idposte) references posteDepartement(idposte),
     foreign key (idDemande) references demande(idDemande)
  );
  
@@ -130,3 +132,14 @@ create table quiz(
 --     note double precision,
 --     foreign key (idCandidat) references candidat(idCandidat)
 -- );
+
+create table posteDepartement(
+    idPoste int, 
+    idDepartement int, 
+    foreign key (idPoste) references Poste(idPoste),
+    foreign key (idDepartement) references departement (idDepartement)
+);
+
+insert into posteDepartement (idposte, idDepartement) values 
+(2, 3)
+(3, 2);

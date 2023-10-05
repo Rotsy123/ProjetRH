@@ -9,6 +9,25 @@ class Poste{
     public int idDemande;
     public DateTime dateFinPostule;
 
+    public Poste[] selectPosteDepartement(Connexion c, int idDepartement){
+        // Connexion c = new Connexion();
+        SqlConnection con = c.connexion();
+        List<Poste> postes = new List<Poste>();
+        string requete = "select*from postedepartement join poste on poste.idPoste = postedepartement.idposte where postedepartement.idDepartement = " +idDepartement;
+        SqlCommand cmd = new SqlCommand(requete, con);
+        SqlDataReader reader = cmd.ExecuteReader();
+        while(reader.Read()){
+            postes.Add(new Poste{
+                idPoste = reader.GetInt32(0),
+                nomPoste = reader.GetString(3),
+                effectif = 0,
+                idDemande = 0,
+                dateFinPostule = DateTime.Today
+            });
+        }
+        con.Close();
+        return postes.ToArray();   
+    }
     public Poste[] selectPoste(Connexion c){
         SqlConnection con = c.connexion();
         List<Poste> postes = new List<Poste>();
