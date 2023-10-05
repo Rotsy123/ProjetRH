@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ProjetRh.Models;
+using ProjetRH.Models;
 using Rh.Models;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -19,6 +20,14 @@ namespace ProjetRH.Controllers
         {
             _logger = logger;
         }
+        public IActionResult PosteListe()
+        {
+            Connexion co = new Connexion();
+            PosteEffectif pos = new PosteEffectif();
+            PosteEffectif[] liste =  pos.selectPosteEffectif(co);
+            ViewBag.Listeposteeff=liste;
+            return View();
+        }
         public IActionResult Choixposte(){
             int idDemande = 3;
             DateTime date = DateTime.Today;
@@ -31,15 +40,11 @@ namespace ProjetRH.Controllers
             ViewBag.nombre= nombre;
             return View(); 
         }
-         public IActionResult PosteListe()
-        {
-            return View(); 
-        }
+             
         public IActionResult EditCV()
         {
             return View(); 
         }
-
         public IActionResult Index()
         {
             return View();

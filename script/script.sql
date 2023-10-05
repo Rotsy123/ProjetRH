@@ -60,6 +60,7 @@ create table posteeffectif(
     datefinpostule DATETIME,
     foreign key (idDemande) references demande(idDemande)
  );
+
  
  create table question(
     idQuestion int IDENTITY(1,1) primary key,
@@ -92,21 +93,21 @@ create table cursus(
     nomCursus   varchar(25)
 );
 
-create table cursusniveau(
-    idCursusNiveau IDENTITY(1,1) primary key,
-    idCursus    int references cursus (idCursus),
-    niveau      double precision,
-    coefficient double precision,
-    idPoste     int references poste (idPoste)
-);
+-- create table cursusniveau(
+--     idCursusNiveau IDENTITY(1,1) primary key,
+--     idCursus    int references cursus (idCursus),
+--     niveau      double precision,
+--     coefficient double precision,
+--     idPoste     int references poste (idPoste)
+-- );
 
-create table experience(){
+-- create table experience(){
     
-}
+-- }
 
-create table cv(
+-- create table cv(
 
-);
+-- );
 
 
 -- create table critere(
