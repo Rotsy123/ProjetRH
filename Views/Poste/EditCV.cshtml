@@ -32,7 +32,7 @@
         // Fonction pour ajouter dynamiquement des champs "Critère" et "Coefficient"
         document.getElementById("ajouter-cursus").addEventListener("click", function () {
             var container = document.getElementById("cursus-container");
-            ajouterChamp(container, "cursus-critere[]", "cursus-coefficient[]");
+            ajouterChamp(container, "cursus-critere[]","cursus-niveau[]", "cursus-coefficient[]");
         });
 
         document.getElementById("ajouter-experience").addEventListener("click", function () {
@@ -40,7 +40,7 @@
             ajouterChamp(container, "experience-critere[]", "experience-coefficient[]");
         });
 
-        function ajouterChamp(container, nomCritere, nomCoefficient) {
+        function ajouterChamp(container, nomCritere,nomNiveau, nomCoefficient) {
             // Créez un div pour chaque paire de champs
             var champContainer = document.createElement("div");
 
@@ -50,6 +50,11 @@
             inputCritere.placeholder = "Critère";
             inputCritere.name = nomCritere;
 
+            var inputNiveau = document.createElement("input");
+            inputNiveau.type = "number";
+            inputNiveau.placeholder = "Niveau";
+            inputNiveau.name = nomNiveau;
+
             // Créez un élément "input" pour le coefficient
             var inputCoefficient = document.createElement("input");
             inputCoefficient.type = "number";
@@ -58,6 +63,7 @@
 
             // Ajoutez les éléments au conteneur
             champContainer.appendChild(inputCritere);
+            champContainer.appendChild(inputNiveau);
             champContainer.appendChild(inputCoefficient);
 
             // Ajoutez le conteneur au conteneur principal
