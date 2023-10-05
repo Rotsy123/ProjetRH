@@ -96,18 +96,23 @@ create table cursusniveau(
     idCursusNiveau IDENTITY(1,1) primary key,
     idCursus    int references cursus (idCursus),
     niveau      double precision,
-    coefficient double precision
+    coefficient double precision,
+    idPoste     int references poste (idPoste)
 );
+
+create table experience(){
+    
+}
 
 create table cv(
 
 );
 
 
-    -- create table critere(
-    --     idCritere int primary key,
-    --     nomCritere varchar(30)
-    -- );
+-- create table critere(
+--     idCritere int primary key,
+--     nomCritere varchar(30)
+-- );
 
 -- create table annonce(
 --     idAnnonce int,

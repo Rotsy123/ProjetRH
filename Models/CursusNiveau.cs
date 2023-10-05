@@ -7,6 +7,7 @@ public class CursusNiveau{
     int idCursus;
     double niveau;
     double coefficient;
+
     public void insertionCursusNiveau(Connexion c){
         SqlConnection con =  c.connexion();
         con.Open();
@@ -18,5 +19,14 @@ public class CursusNiveau{
         cmd.ExecuteNonQuery();
         con.Close();
     }
+    public CursusNiveau(int idCursus,double niveau,double coefficient){
+        IdCursus = idCursus;
+        Niveau = niveau;
+        Coefficient = coefficient;
+    }
+    public int IdCursusNiveau { get => idCursusNiveau; set => idCursusNiveau = value; }
+    public int IdCursus { get => idCursus; set => idCursus = value; }
+    public double Niveau { get => niveau; set => niveau = value; }
+    public double Coefficient { get => coefficient; set => coefficient = value; }
 
 }
