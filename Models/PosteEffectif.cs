@@ -8,7 +8,7 @@ class PosteEffectif{
     public int effectif;
     public DateTime datefinpostule;
 
-    public PosteEffectif[] selectPostEffectif(){
+    public PosteEffectif[] selectPosteEffectif(Connexion c){
         SqlConnection con = c.connexion();
         List<PosteEffectif> postes = new List<PosteEffectif>();
         string requete = "SELECT * FROM posteeffectif";
@@ -19,7 +19,7 @@ class PosteEffectif{
                 idPosteEffectif = reader.GetInt32(0),
                 idDemande = reader.GetInt32(1),
                 effectif = reader.GetInt32(2),
-                dateFinPostule = reader.GetDateTime(4)
+                datefinpostule = reader.GetDateTime(4)
             });
         }
         con.Close();

@@ -470,19 +470,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ANDRIANOTAHINA\\.nuget\\packages\\": {}
+    "C:\\Users\\Tsiky Aro\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\ETUDE\\Mr_TOVO\\S5\\ProjetRH\\ProjetRH.csproj",
+      "projectUniqueName": "D:\\ITU\\s5\\Mr Tovo\\ProjetRH\\ProjetRH.csproj",
       "projectName": "ProjetRH",
-      "projectPath": "A:\\ETUDE\\Mr_TOVO\\S5\\ProjetRH\\ProjetRH.csproj",
-      "packagesPath": "C:\\Users\\ANDRIANOTAHINA\\.nuget\\packages\\",
-      "outputPath": "A:\\ETUDE\\Mr_TOVO\\S5\\ProjetRH\\obj\\",
+      "projectPath": "D:\\ITU\\s5\\Mr Tovo\\ProjetRH\\ProjetRH.csproj",
+      "packagesPath": "C:\\Users\\Tsiky Aro\\.nuget\\packages\\",
+      "outputPath": "D:\\ITU\\s5\\Mr Tovo\\ProjetRH\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ANDRIANOTAHINA\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Tsiky Aro\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -530,7 +530,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
