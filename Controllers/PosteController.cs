@@ -40,6 +40,9 @@ namespace ProjetRH.Controllers
             ViewBag.nombre= nombre;
             return View(); 
         }
+        public IActionResult QCM(){
+            return View();
+        }
              
         public IActionResult EditCV()
         {

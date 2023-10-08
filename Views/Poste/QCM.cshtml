@@ -1,0 +1,164 @@
+@{
+    ViewData["Title"] = "QUIZ";
+}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+
+<section class="contenue">
+    <div>
+        <header>
+            <h2>@ViewData["Title"]</h2>
+        </header>
+        <form action="#" method="post">
+            <div id="question">
+            </div>
+            <button type="button" id="ajouter-question">Ajouter</button><br>
+            <input type="submit" value="Valider" id="but">
+        </form>
+    </div>
+</section>
+
+<script>
+    document.getElementById("ajouter-question").addEventListener("click", function () {
+        var container = document.getElementById("question");
+        ajouterChamp(container, "question[]", "reponse[]");
+    });
+
+    function ajouterChamp(container, question, reponse) {
+        // Créez un div pour chaque paire de champs
+        var champContainer = document.createElement("div");
+
+        // Créez un élément "input" pour le question
+        var inputQuestion = document.createElement("input");
+        inputQuestion.type = "text";
+        inputQuestion.placeholder = "Question";
+        inputQuestion.name = question;
+
+        var ajouterReponseButton = document.createElement("button");
+        ajouterReponseButton.textContent = "Ajouter une Réponse";
+        ajouterReponseButton.type = "button";
+        ajouterReponseButton.addEventListener("click", function() {
+            ajouterReponse(champContainer, reponse);
+        });
+
+        // Ajoutez les éléments au conteneur
+        champContainer.appendChild(inputQuestion);
+        champContainer.appendChild(ajouterReponseButton);
+
+        // Ajoutez le conteneur au conteneur principal
+        container.appendChild(champContainer);
+    }
+
+    function ajouterReponse(container, reponse) {
+        // Créez un élément "input" pour la réponse
+        var reponseContainer = document.createElement("div");
+        reponseContainer.classList.add("reponse-container");
+
+        var inputReponse = document.createElement("input");
+        inputReponse.type = "text";
+        inputReponse.placeholder = "Reponse";
+        inputReponse.name = reponse;
+
+        // Créez un élément "input" pour le coefficient
+        var inputCoefficient = document.createElement("input");
+        inputCoefficient.type = "number";
+        inputCoefficient.placeholder = "Coef";
+        inputCoefficient.name = "coefficient[]";
+
+        // Ajoutez les éléments au conteneur
+        reponseContainer.appendChild(inputReponse);
+        reponseContainer.appendChild(inputCoefficient);
+
+        container.appendChild(reponseContainer);
+    }
+</script>
+<style>
+    header h2{
+        margin-bottom: 50px;
+    }
+    section.contenue > div{
+        width: 850px;
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+        background: #fff;
+        border-radius: 5px;
+        margin-top: 75px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+    #ajouter-question{
+        width: 150px;
+        color: #fff; /* Couleur du texte */
+        border: none; /* Pas de bordure */
+        padding: 10px 20px; /* Rembourrage intérieur */
+        margin-top: 10px; /* Marge en haut */
+        margin-bottom: 10px;
+        cursor: pointer; /* Curseur pointeur au survol */
+        border-radius: 5px; /* Coins arrondis */
+        background-color: #007bff;
+    }
+    #but{
+        width: 150px;
+        color: #fff; /* Couleur du texte */
+        border: none; /* Pas de bordure */
+        padding: 10px 20px; /* Rembourrage intérieur */
+        margin-top: 10px; /* Marge en haut */
+        margin-bottom: 10px;
+        cursor: pointer; /* Curseur pointeur au survol */
+        border-radius: 5px; /* Coins arrondis */
+        background-color: #4CAF50
+    }
+
+    #question div {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #question div input {
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    #question div input[type="number"] {
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        width: 50px;
+    }
+    #question div button{
+        background-color: #0056b3;  /* Couleur de fond */
+        color: #fff; /* Couleur du texte */
+        border: none; /* Pas de bordure */
+        padding: 10px 20px; /* Rembourrage intérieur */
+        margin-top: 10px; /* Marge en haut */
+        margin-bottom: 10px;
+        cursor: pointer; /* Curseur pointeur au survol */
+        border-radius: 5px; /* Coins arrondis */
+    }
+
+    #question .reponse-container{
+        display: flex;
+        flex-direction: row; 
+    }
+    #question .reponse-container input[type="text"]{
+        width: 800px;
+    }
+ 
+    *,*:before,*:after{
+        box-sizing: inherit;
+    }
+
+    .wrapper{
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    body{
+       background-color:#f2f2f2 ; 
+    }
+</style>
