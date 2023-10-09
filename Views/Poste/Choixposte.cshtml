@@ -21,6 +21,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             margin-left: 250px;
             @* justify-content: center; *@
+            margin-top: 10%;
         }
 
         h1 {
@@ -51,6 +52,12 @@
         }
 
         select, input[type="number"] {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        select, input[type="date"] {
             padding: 8px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -87,56 +94,86 @@
 <body>
     <div id="contenue">
         <h1>Ajouter Nombre Effectif</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Poste</th>
-                    <th>Effectif</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        <form id="item-form">
-            <select id="item-name" required>
+<table>
+    <thead>
+        <tr>
+            <th>Poste</th>
+            <th>Effectif</th>
+            <th>Date de fin de postule</th>
+        </tr>
+    </thead>
+    <tbody id="table-body">
+        <!-- Les données insérées apparaîtront ici -->
+    </tbody>
+</table>
+
+       <form id="item-form">
+            <select id="item-name" name="idPoste" required>
                 <option value="">Choisir un poste</option>
-                <option value="Directeur">Directeur</option>
-                <option value="Secrétaire">Secrétaire</option>
+                @foreach (var poste in ViewBag.postes){
+                    <option value="@poste.idPoste" data-nom-poste="@poste.nomPoste">@poste.nomPoste</option>
+                }
             </select>
-            <input type="number" id="item-quantity" placeholder="Quantité" required>
-            <input type="submit" value="Ajouter">
+            <input type="number" id="item-quantity" placeholder="Quantité" name="effectif" required>
+            <input type="date" placeholder="Date fin Postule" id="item-date" name="datefinpostule" required>
+            <input type="submit" value="Ajouter" onclick="ajouterItem(event)">
         </form>
+
         <button id="finish-button" onclick="terminer()">Terminer</button>
     </div>
 
-    <script>
-        const tableBody = document.querySelector('tbody');
-        const itemForm = document.getElementById('item-form');
-        const itemNameInput = document.getElementById('item-name');
-        const itemQuantityInput = document.getElementById('item-quantity');
+<script>
+const tableBody = document.getElementById('table-body'); // Utilisez l'id du corps de la table
 
-        itemForm.addEventListener('submit', function (e) {
-            e.preventDefault();
+function ajouterItem(event) {
+    event.preventDefault();
 
-            const itemName = itemNameInput.value;
-            const itemQuantity = itemQuantityInput.value;
+    const itemNameInput = document.getElementById('item-name');
+    const itemQuantityInput = document.getElementById('item-quantity');
+    const itemDateInput = document.getElementById('item-date');
 
-            if (itemName && itemQuantity) {
-                const newRow = document.createElement('tr');
-                newRow.innerHTML = `
-                    <td>${itemName}</td>
-                    <td>${itemQuantity}</td>
-                `;
-                tableBody.appendChild(newRow);
+    const selectedItem = itemNameInput.options[itemNameInput.selectedIndex];
+    const itemName = selectedItem.textContent;
+    const itemQuantity = itemQuantityInput.value;
+    const itemDate = itemDateInput.value;
 
-                itemNameInput.value = '';
-                itemQuantityInput.value = '';
+    if (itemName && itemQuantity && itemDate) {
+        $.ajax({
+            url: '@Url.Action("InsertionPosteEffectif", "Poste")',
+            method: 'POST',
+            data: {
+                idPoste: itemNameInput.value,
+                effectif: itemQuantity,
+                datefinpostule: document.getElementById('item-date').value
+            },
+            success: function (response) {
+                if (response.success) {
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                        <td>${itemName}</td>
+                        <td>${itemQuantity}</td>
+                        <td>${itemDate}</td>
+                    `;
+                    tableBody.appendChild(newRow); 
+
+                    itemNameInput.value = '';
+                    itemQuantityInput.value = '';
+                    itemDateInput.value = '';
+
+ 
+                } else {
+                    alert('Une erreur s\'est produite lors de l\'ajout des données');
+                }
+            },
+            error: function (xhr, status, error) {
+                alert('Une erreur s\'est produite lors de l\'ajout des données');
             }
         });
-
-        function terminer() {
-            alert('Processus terminé !');
-        }
-    </script>
+    }
+}
+function terminer(){
+    window.location.href='/Poste/PosteListe';
+}
+</script>
 </body>
 </html>

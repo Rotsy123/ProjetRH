@@ -1,17 +1,9 @@
 @{
     ViewData["Title"] = "Editer un CV";
 }
+<div id="contenue">
 <h1>@ViewData["Title"]</h1>    
     <form action="traitement.php" method="post">
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required><br>
-
-        <label for="prenom">Prénom :</label>
-        <input type="text" id="prenom" name="prenom" required><br>
-
-        <label for="adresse">Adresse :</label>
-        <input type="text" id="adresse" name="adresse"><br>
-
         <h3>Cursus :</h3>
         <div id="cursus-container">
             <!-- Les champs "Critère" et "Coefficient" seront ajoutés ici -->
@@ -27,7 +19,7 @@
 
         <input type="submit" value="Soumettre" id="but">
     </form>
-
+</div>
     <script>
         // Fonction pour ajouter dynamiquement des champs "Critère" et "Coefficient"
         document.getElementById("ajouter-cursus").addEventListener("click", function () {
@@ -72,7 +64,9 @@
     </script>
 
     <style>
-        
+        #contenue{
+    margin-top:10%;
+} 
  
     body {
     font-family: Arial, sans-serif;
