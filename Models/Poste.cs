@@ -30,6 +30,7 @@ class Poste{
     }
     public Poste[] selectPoste(Connexion c){
         SqlConnection con = c.connexion();
+        con.Open();
         List<Poste> postes = new List<Poste>();
         string requete = "SELECT * FROM poste";
         SqlCommand cmd = new SqlCommand(requete, con);

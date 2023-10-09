@@ -31,7 +31,6 @@ public class Demande
         cmd.Parameters.AddWithValue("@heureTr",HeureTravaux );
         cmd.Parameters.AddWithValue("@hommeJour", HommeJour);
         cmd.Parameters.AddWithValue("@idDepartement",IdDepartement);
-        Console.WriteLine(sql);
         cmd.ExecuteNonQuery();
         // con.Close();
     }

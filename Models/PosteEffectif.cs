@@ -12,7 +12,21 @@ class PosteEffectif{
     public int idposte;
     public DateTime datefinpostule;
 
-
+    public PosteEffectif(){}
+    public  PosteEffectif[] selectPosteEffectif(Connexion c){
+        SqlConnection con = c.connexion();
+        con.Open();
+        List<PosteEffectif> postes = new List<PosteEffectif>();
+        string requete = "SELECT * FROM posteeffectif";
+        SqlCommand cmd = new SqlCommand(requete, con);
+        SqlDataReader reader = cmd.ExecuteReader();
+        while(reader.Read()){
+            PosteEffectif po = new PosteEffectif( reader.GetInt32(0),reader.GetInt32(1),reader.GetInt32(2),reader.GetDateTime(3));
+            postes.Add(po);
+        }
+        con.Close();
+        return postes.ToArray();
+    }
     public void insertionPosteEffectif(Connexion c){
         SqlConnection con =  c.connexion();
         con.Open();
@@ -38,8 +52,8 @@ class PosteEffectif{
         Idposte = idposte;
         Datefinpostule = datefinpostule;
     }
-    public PosteEffectif(){}
     public int Idposte{get => idposte ;set => idposte = value;}
+
 
     public int IdPosteEffectif{get => idPosteEffectif ;set => idPosteEffectif = value;}
     public int IdDemande{get => idDemande ;set => idDemande = value;}

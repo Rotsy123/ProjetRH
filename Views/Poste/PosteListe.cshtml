@@ -52,20 +52,23 @@ td:nth-child(5) {
         <tr>
             <th>Poste</th>
             <th>Effectif</th>
-            <th>Salaire</th>
+            <th>Date fin postule</th>
             <th>  </th>
         </tr>
         <tr>
-            <td>Développeur</td>
-            <td>2</td>
-            <td>50000 €</td>
-            <td><a href="EditCV" class="edit-link">Editer un CV</a></td>
-        </tr>
-        <tr>
-            <td>Designer</td>
-            <td>2</td>
-            <td>60000 €</td>
-            <td><a href="EditCV" class="edit-link">Editer un CV</a></td>
+        @if (ViewBag.Listeposteeff != null)
+        {
+            @for(int i = 0; i < ViewBag.Listeposteeff.Length; i++){
+                <td>@ViewBag.Listeposteeff[i].idDemande</td>
+                <td>@ViewBag.Listeposteeff[i].effectif</td>
+                <td>@ViewBag.Listeposteeff[i].datefinpostule</td>
+                <td><a href="EditCV" class="edit-link">Editer un CV</a></td>
+            }
+             }
+        else
+        {
+            <p>Les données ne sont pas disponibles.</p>
+        }
         </tr>
         <!-- Ajoutez plus de lignes ici pour plus d'employés -->
     </table>

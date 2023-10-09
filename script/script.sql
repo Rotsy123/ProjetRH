@@ -62,6 +62,7 @@ create table posteeffectif(
     foreign key (idposte) references posteDepartement(idposte),
     foreign key (idDemande) references demande(idDemande)
  );
+
  
  create table question(
     idQuestion int IDENTITY(1,1) primary key,
@@ -89,11 +90,32 @@ create table quiz(
     foreign key (idQuestion) references question(idQuestion)
 );
 
+create table cursus(
+    idCursus int IDENTITY(1,1) primary key,
+    nomCursus   varchar(25)
+);
 
-    -- create table critere(
-    --     idCritere int primary key,
-    --     nomCritere varchar(30)
-    -- );
+-- create table cursusniveau(
+--     idCursusNiveau IDENTITY(1,1) primary key,
+--     idCursus    int references cursus (idCursus),
+--     niveau      double precision,
+--     coefficient double precision,
+--     idPoste     int references poste (idPoste)
+-- );
+
+-- create table experience(){
+    
+-- }
+
+-- create table cv(
+
+-- );
+
+
+-- create table critere(
+--     idCritere int primary key,
+--     nomCritere varchar(30)
+-- );
 
 -- create table annonce(
 --     idAnnonce int,
