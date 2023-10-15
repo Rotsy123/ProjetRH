@@ -94,28 +94,16 @@
 <body>
     <div id="contenue">
         <h1>Ajouter Nombre Effectif</h1>
-<table>
-    <thead>
-        <tr>
-            <th>Poste</th>
-            <th>Effectif</th>
-            <th>Date de fin de postule</th>
-        </tr>
-    </thead>
-    <tbody id="table-body">
-        <!-- Les données insérées apparaîtront ici -->
-    </tbody>
-</table>
-
         <table>
             <thead>
                 <tr>
                     <th>Poste</th>
                     <th>Effectif</th>
-                    <th>Date Fin Postule</th>
+                    <th>Date de fin de postule</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="table-body">
+                <!-- Les données insérées apparaîtront ici -->
             </tbody>
         </table>
         <form id="item-form">
@@ -136,8 +124,7 @@
 <script>
 const tableBody = document.getElementById('table-body'); // Utilisez l'id du corps de la table
 
-function ajouterItem(event) 
-{
+function ajouterItem(event) {
     event.preventDefault();
 
     const itemNameInput = document.getElementById('item-name');
@@ -148,14 +135,6 @@ function ajouterItem(event)
     const itemName = selectedItem.textContent;
     const itemQuantity = itemQuantityInput.value;
     const itemDate = itemDateInput.value;
-            if (itemName && itemQuantity) {
-                const newRow = document.createElement('tr');
-                newRow.innerHTML = `
-                    <td>${itemName}</td>
-                    <td>${itemQuantity}</td>
-                    <td>${itemName}</td>
-                `;
-                tableBody.appendChild(newRow);
 
     if (itemName && itemQuantity && itemDate) {
         $.ajax({
@@ -190,7 +169,6 @@ function ajouterItem(event)
             }
         });
     }
-}
 }
 function terminer(){
     window.location.href='/Poste/PosteListe';

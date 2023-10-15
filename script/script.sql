@@ -36,7 +36,13 @@ create table employes(
 );
 -- Donnes --
 INSERT INTO departement (idDepartement, nomDepartement) VALUES
-(1, 'Ressources Humaines'),
+(1, 'R63
+
+
+
+
+
+essources Humaines'),
 (2, 'Finance'),
 (3, 'Informatique');
 
@@ -49,8 +55,17 @@ INSERT INTO poste (idPoste, nomPoste) VALUES
 INSERT INTO employes (nom,prenom,dtn,idDept, idPoste, salaire) VALUES
 ('Jean', 'Paul', '1995-12-03', 1, 1, 60000.00),
 (2, 3, 45000.00),
-(3, 2, 55000.00);
+(3, 2, 55000.00);  x
+create table posteDepartement(
+    idPoste int, 
+    idDepartement int, 
+    foreign key (idPoste) references Poste(idPoste),
+    foreign key (idDepartement) references departement (idDepartement)
+);
 
+insert into posteDepartement (idposte, idDepartement) values 
+(2, 3)
+(3, 2);
 
 
 create table posteeffectif(
@@ -59,7 +74,7 @@ create table posteeffectif(
     effectif int,
     datefinpostule DATETIME,
     idposte int,
-    foreign key (idposte) references posteDepartement(idposte),
+    foreign key (idposte) references poste(idposte),
     foreign key (idDemande) references demande(idDemande)
  );
 
@@ -71,7 +86,9 @@ create table posteeffectif(
 
 create table reponse(
     idReponse int IDENTITY(1,1) primary key,
-    reponse text
+    idQuestion  int references question (idQuestion),
+    reponse text,
+    valeur      int 
 );
 
 create table questionreponse(
@@ -155,13 +172,3 @@ create table cursus(
 --     foreign key (idCandidat) references candidat(idCandidat)
 -- );
 
-create table posteDepartement(
-    idPoste int, 
-    idDepartement int, 
-    foreign key (idPoste) references Poste(idPoste),
-    foreign key (idDepartement) references departement (idDepartement)
-);
-
-insert into posteDepartement (idposte, idDepartement) values 
-(2, 3)
-(3, 2);

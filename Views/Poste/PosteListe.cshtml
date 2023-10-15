@@ -55,21 +55,21 @@ td:nth-child(5) {
             <th>Date fin postule</th>
             <th>  </th>
         </tr>
-        <tr>
         @if (ViewBag.Listeposteeff != null)
         {
             @for(int i = 0; i < ViewBag.Listeposteeff.Length; i++){
+            <tr>
                 <td>@ViewBag.Listeposteeff[i].idDemande</td>
                 <td>@ViewBag.Listeposteeff[i].effectif</td>
                 <td>@ViewBag.Listeposteeff[i].datefinpostule</td>
                 <td><a href="EditCV" class="edit-link">Editer un CV</a></td>
+            </tr>
             }
              }
         else
         {
             <p>Les données ne sont pas disponibles.</p>
         }
-        </tr>
         <!-- Ajoutez plus de lignes ici pour plus d'employés -->
     </table>
     </div>

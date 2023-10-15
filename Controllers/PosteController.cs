@@ -20,32 +20,43 @@ namespace ProjetRH.Controllers
         {
             _logger = logger;
         }
-        // public IActionResult  InsertionPosteEffectif(){
-        //     Connexion con = new Connexion();
-        //     int idDemande = 3;
-        //     int idposte = int.Parse(Request.Form["idPoste"].ToString());
-        //     int effectif = int.Parse(Request.Form["effectif"].ToString());
-        //     DateTime finpostule = Convert.ToDateTime(Request.Form["datefinpostule"].ToString());
-        //     PosteEffectif poste = new PosteEffectif(idDemande,effectif,idposte, finpostule);
-        //     poste.insertionPosteEffectif(con); 
-        //     return RedirectToAction("ChoixPoste");
-        // }
+        public IActionResult QCM(){
+            return View();
+        }
+        
+        public IActionResult InsertionQCM ([FromBody]List<QuestionModel> data){
+            int idPoste = 1;
+            Connexion c = new Connexion();
+            Console.WriteLine(data[0].reponses);
+            for(int i =0; i<data.Count; i++){
+                List<Reponse> reps = new List<Reponse>();
+                QuestionModel q = new  QuestionModel(data[i].question,data[i].reponses);
+                q.Insert(c);
+                QuestionModel qm = q.LastEnter();
+                Quiz z = new Quiz(idPoste,qm.idQuestion);
+                z.insert(c);
+                Console.WriteLine(qm.idQuestion);
+                for(int j = 0; j<q.reponses.Count;j++){
+                    Reponse res = new Reponse(q.reponses[j].reponse,qm.idQuestion,q.reponses[j].coefficient);
+                    Console.WriteLine(data[i].reponses[j].coefficient + ":"+j);
+                    res.Insert(c);
+                }
+            }
+            return Json(new { success = true, message = "Données ajoutées avec succès " });
+        }
 
-     public IActionResult InsertionPosteEffectif()
-{
-    Connexion con = new Connexion();
-    int idDemande = 3;
-    int idposte = int.Parse(Request.Form["idPoste"].ToString());
-    int effectif = int.Parse(Request.Form["effectif"].ToString());
-    DateTime finpostule = Convert.ToDateTime(Request.Form["datefinpostule"].ToString());
-    PosteEffectif poste = new PosteEffectif(idDemande, effectif, idposte, finpostule);
-    poste.insertionPosteEffectif(con); 
+        public IActionResult InsertionPosteEffectif(){
+            Connexion con = new Connexion();
+            int idDemande = 3;
+            int idposte = int.Parse(Request.Form["idPoste"].ToString());
+            int effectif = int.Parse(Request.Form["effectif"].ToString());
+            DateTime finpostule = Convert.ToDateTime(Request.Form["datefinpostule"].ToString());
+            PosteEffectif poste = new PosteEffectif(idDemande, effectif, idposte, finpostule);
+            poste.insertionPosteEffectif(con); 
 
-    // Retourner une réponse JSON indiquant le succès
-    return Json(new { success = true });
-}
-
-
+            // Retourner une réponse JSON indiquant le succès
+            return Json(new { success = true });
+        }
         public IActionResult PosteListe()
         {
             Connexion co = new Connexion();
@@ -68,9 +79,7 @@ namespace ProjetRH.Controllers
             ViewBag.nombre= nombre;
             return View(); 
         }
-        public IActionResult QCM(){
-            return View();
-        }
+        
              
         public IActionResult EditCV()
         {

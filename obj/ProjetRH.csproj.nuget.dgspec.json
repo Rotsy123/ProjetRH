@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Mr Tovo\\ProjetRH\\ProjetRH\\ProjetRH.csproj": {}
+    "D:\\ITU\\s5\\Mr Tovo\\ProjetRH\\ProjetRH.csproj": {}
   },
   "projects": {
-    "D:\\Mr Tovo\\ProjetRH\\ProjetRH\\ProjetRH.csproj": {
+    "D:\\ITU\\s5\\Mr Tovo\\ProjetRH\\ProjetRH.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Mr Tovo\\ProjetRH\\ProjetRH\\ProjetRH.csproj",
+        "projectUniqueName": "D:\\ITU\\s5\\Mr Tovo\\ProjetRH\\ProjetRH.csproj",
         "projectName": "ProjetRH",
-        "projectPath": "D:\\Mr Tovo\\ProjetRH\\ProjetRH\\ProjetRH.csproj",
-        "packagesPath": "C:\\Users\\ROTSY\\.nuget\\packages\\",
-        "outputPath": "D:\\Mr Tovo\\ProjetRH\\ProjetRH\\obj\\",
+        "projectPath": "D:\\ITU\\s5\\Mr Tovo\\ProjetRH\\ProjetRH.csproj",
+        "packagesPath": "C:\\Users\\Tsiky Aro\\.nuget\\packages\\",
+        "outputPath": "D:\\ITU\\s5\\Mr Tovo\\ProjetRH\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ROTSY\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Tsiky Aro\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -62,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

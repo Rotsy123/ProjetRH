@@ -2,47 +2,51 @@ using System.Data.SqlClient;
 using ProjetRh.Models;
 
 namespace Rh.Models;
-class Question{
+public class QuestionModel{
     public int idQuestion {get;set;}
     public string? question {get;set;}
-    public List<Reponse> reponse {get;set;}
+    public List<Reponse> reponses {get;set;}
 
-    public Question (int idQuestion, string? question, List<Reponse> reponse){
+    public  QuestionModel (int idQuestion, string? question, List<Reponse> reponse){
         this.idQuestion = idQuestion;
         this.question = question;
-        this.reponse = reponse;
+        this.reponses = reponse;
     }
-    public Question(int idQuestion, string? question){
+     public  QuestionModel (string? question, List<Reponse> reponse){
+        this.question = question;
+        this.reponses = reponse;
+    }
+    public  QuestionModel(int idQuestion, string? question){
         this.idQuestion = idQuestion;
         this.question = question;
     }
-    public Question(){}
+    public  QuestionModel(){}
     
-    public Question LastEnter (){
+    public  QuestionModel LastEnter (){
         Connexion c = new Connexion();
         SqlConnection con = c.connexion();
         con.Open();
         string sql = "SELECT * FROM Question order by idQuestion desc";
         SqlCommand command = new SqlCommand(sql, con);
         SqlDataReader data = command.ExecuteReader();
-        Question temp = null;
+         QuestionModel temp = null;
         if (data.Read())
         {
-            temp = new Question(data.GetInt32(0),data.GetString(1)) ;
+            temp = new  QuestionModel(data.GetInt32(0),data.GetString(1)) ;
         }
         con.Close();
         return temp;
     }
     public void InsertQuestionReponse(Connexion c){
-        Question quest = new Question().LastEnter();
+         QuestionModel quest = new  QuestionModel().LastEnter();
         SqlConnection con = c.connexion();
         con.Open();
-        for(int i=0; i<reponse.Count(); i++){
+        for(int i=0; i<reponses.Count(); i++){
             string sql = "INSERT INTO QuestionReponse (idquestion, idReponse, valeur) VALUES (@idquestion, @idReponse, @valeur)";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.AddWithValue("@idquestion", quest.idQuestion);
-            cmd.Parameters.AddWithValue("@idReponse", reponse[i].idReponse);
-            cmd.Parameters.AddWithValue("@valeur", reponse[i].valeur); 
+            cmd.Parameters.AddWithValue("@idReponse", reponses[i].idReponse);
+            cmd.Parameters.AddWithValue("@valeur", reponses[i].coefficient); 
         Console.WriteLine(sql);
         cmd.ExecuteNonQuery();
         }

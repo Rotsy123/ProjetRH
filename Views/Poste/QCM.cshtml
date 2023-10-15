@@ -13,7 +13,7 @@
         <form action="#" method="post">
             <div id="question">
             </div>
-            <button type="button" id="ajouter-question">Ajouter</button><br>
+            <button type="button" id="ajouter-question">Ajouter Question</button><br>
             <input type="submit" value="Valider" id="but">
         </form>
     </div>
@@ -72,8 +72,59 @@
 
         container.appendChild(reponseContainer);
     }
+    var form = document.querySelector("form");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var questionInputs = document.querySelectorAll('input[name="question[]"]');
+        var data = [];
+        questionInputs.forEach(function (input) {
+            var questionText = input.value;
+            var reponseInputs = input.parentElement.querySelectorAll('input[name="reponse[]"]');
+            var coefficients = input.parentElement.querySelectorAll('input[name="coefficient[]"]');
+            var reponses = [];
+            for (var i = 0; i < reponseInputs.length; i++) {
+                var reponseText = reponseInputs[i].value;
+                var coefficient = coefficients[i].value;
+                var reponseObj = {
+                    reponse: reponseText,
+                    coefficient: coefficient
+                };
+                
+                reponses.push(reponseObj);
+            }
+            var questionObj = {
+                question: questionText,
+                reponses: reponses
+            };
+
+            data.push(questionObj);
+        });
+        $.ajax({
+            url: '@Url.Action("InsertionQCM", "Poste")',
+            method: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json; charset=utf-8', 
+            dataType: 'json',
+            success: function (response) {
+                if(response.success){
+                    alert('Success');
+                }else{
+                    alert('Une erreur');
+                }
+            },
+            error: function (xhr, status, error) {
+                alert('Une erreur s\'est produite lors de l\'ajout des données');
+            }
+        });
+
+        console.log(data);
+    });
+
 </script>
 <style>
+    .contenue{
+        margin-top: 10%;
+    }
     header h2{
         margin-bottom: 50px;
     }
